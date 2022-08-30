@@ -38,17 +38,12 @@ RUN cp /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime \
 								&& rm -R /var/www/html/installer \
 									&& mv /conf/entrypoint.sh /entrypoint.sh \
 									&& mv /conf/nginx.conf /etc/nginx/nginx.conf \
-									&& mv /conf/config.inc.php /var/www/html/config/config.inc.php \
 									&& rm -R /conf \
 										&& chown -R www-data:www-data /var/www/html \
 										&& chmod -R 500 /var/www/html \
 										&& chmod -R 700 /var/www/html/temp/ \
-										&& chmod 400 /var/www/html/config/config.inc.php \
 											&& chmod a+x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 80
-
-
-###									&& mkdir /var/www/html/tmp \
