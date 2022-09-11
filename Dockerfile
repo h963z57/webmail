@@ -37,7 +37,7 @@ RUN cp /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime \
 								&& rm roundcubemail-1.6.0-complete.tar.gz \
 								&& rm -R /var/www/html/installer \
 									&& mv /conf/entrypoint.sh /entrypoint.sh \
-									&& mv /conf/nginx.conf /etc/nginx/nginx.conf \
+#									&& mv /conf/nginx.conf /etc/nginx/nginx.conf \
 									&& rm -R /conf \
 										&& chown -R www-data:www-data /var/www/html \
 										&& chmod -R 500 /var/www/html \
