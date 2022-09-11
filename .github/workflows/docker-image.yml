@@ -24,16 +24,17 @@ jobs:
     environment: stage
     runs-on: ubuntu-latest
     needs: build_and_pub
-    
+    env:
+      LOGIN: ${{ secrets.DOCKER_LOGIN }}
+      NAME: ${{ secrets.DOCKER_NAME }}
     steps:
       - name: Deploy to own srv via SSH action
         uses: appleboy/ssh-action@v0.1.3
         with:
-          host: 92.255.165.42
-          port: 5577
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          envs: IMAGE_NAME,REGISTRY,GITHUB_SHA,CONTAINER_NAME
           script: |
-            docker pull h963z57/webmail:main
+            docker pull $LOGIN/$NAME:${GITHUB_REF:11}
             docker-compose restart
