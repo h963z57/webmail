@@ -30,6 +30,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.3
         with:
           host: ${{ secrets.SSH_HOST }}
+          port: 5577
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           envs: IMAGE_NAME,REGISTRY,GITHUB_SHA,CONTAINER_NAME
