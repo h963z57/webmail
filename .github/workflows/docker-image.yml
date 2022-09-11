@@ -29,7 +29,7 @@ jobs:
       - name: Deploy to own srv via SSH action
         uses: appleboy/ssh-action@v0.1.3
         with:
-          host: ${{ secrets.SSH_HOST }}
+          host: 92.255.165.42
           port: 5577
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
