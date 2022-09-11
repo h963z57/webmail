@@ -37,4 +37,3 @@ jobs:
           script:
             docker pull h963z57/webmail:main
             docker-compose restart
-            
