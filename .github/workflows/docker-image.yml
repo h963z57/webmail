@@ -34,6 +34,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           envs: IMAGE_NAME,REGISTRY,GITHUB_SHA,CONTAINER_NAME
-          script:
+          script: |
             docker pull h963z57/webmail:main
             docker-compose restart
