@@ -1,4 +1,4 @@
-name: CI\CD_webmail
+name: CI/CD_webmail
 on:
   schedule:
     - cron: '0 0 */16 * *'
