@@ -31,7 +31,7 @@ RUN cp /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime \
 						php8.0-pdo \
 						php8.0-intl \
 						php-pear \
- 							&& echo "timezone = Asia/Yekaterinburg" >> /etc/php/8.0/php.ini \ 
+ 							&& echo "timezone = Europe/Moscow" >> /etc/php/8.0/php.ini \ 
 								&& wget https://github.com/roundcube/roundcubemail/releases/download/1.6.0/roundcubemail-1.6.0-complete.tar.gz \
 								&& tar xvf roundcubemail-1.6.0-complete.tar.gz --strip-components=1 -C /var/www/html/ \
 								&& rm roundcubemail-1.6.0-complete.tar.gz \
